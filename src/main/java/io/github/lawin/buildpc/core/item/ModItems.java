@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BuildPCCore.MODID);
 
-    public static final DeferredItem<Item> TEST_ITEM = ITEMS.register("testitem", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> TEST_ITEM = ITEMS.register("test_item", () -> new Item(new Item.Properties()));
 
 
 

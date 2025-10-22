@@ -1,5 +1,6 @@
 package io.github.lawin.buildpc.core;
 
+import io.github.lawin.buildpc.core.block.ModBlocks;
 import io.github.lawin.buildpc.core.item.ModItems;
 
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(BuildPCCore.MODID)
 public class BuildPCCore {
-    // NOTE: MODID 상수는 존나존나 중요하니까 시발 절대 건들지 말자;;
+    // NOTE: MODID 상수는 존@나22 중요하니까 시@발 절대 건들지 말자;;
     public static final String MODID = "buildpccoremod"; // 아 시발 백틱;; 작아서 존나 안보이노;;
     public static final Logger LOGGER = LogUtils.getLogger();
     //
@@ -40,6 +41,7 @@ public class BuildPCCore {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -57,6 +59,15 @@ public class BuildPCCore {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.TEST_ITEM);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.TEST_BLOCK);
+        }
+
+//        if (event.getTabKey() == CreativeModeTabs.OP_BLOCKS) {
+//            event.accept(ModItems.TEST_ITEM);
+//            event.accept(ModBlocks.TEST_BLOCK);
+//        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

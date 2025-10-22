@@ -1,3 +1,7 @@
 {
-  "item.buildpccoremod.testitem": "TestItem"
+  "_comment": "English",
+
+  "item.buildpccoremod.test_item": "Test Item",
+
+  "block.buildpccoremod.test_block": "Test Block"
 }
