@@ -15,6 +15,7 @@ public class ModItems {
 
     public static final DeferredItem<Item> CPU = ITEMS.register("cpu", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> RAM = ITEMS.register("ram", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MD2_SSD = ITEMS.register("md2_ssd", () -> new  Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {
