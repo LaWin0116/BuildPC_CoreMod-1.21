@@ -59,9 +59,9 @@ public class BuildPCCore {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.CPU);
-        }
+//        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+//            event.accept(ModItems.CPU);
+//        }
 
         if (event.getTabKey() == CreativeModeTabs.OP_BLOCKS) {
             event.accept(ModItems.TEST_ITEM);

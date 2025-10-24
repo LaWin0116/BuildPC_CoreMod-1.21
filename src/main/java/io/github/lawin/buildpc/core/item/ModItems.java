@@ -12,7 +12,9 @@ public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BuildPCCore.MODID);
 
     public static final DeferredItem<Item> TEST_ITEM = ITEMS.register("test_item", () -> new Item(new Item.Properties()));
+
     public static final DeferredItem<Item> CPU = ITEMS.register("cpu", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAM = ITEMS.register("ram", () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {
