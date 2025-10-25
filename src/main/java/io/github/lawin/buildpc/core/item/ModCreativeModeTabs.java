@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.RAM);
                 output.accept(ModItems.MD2_SSD);
                 output.accept(ModItems.MOTHER_BOARD);
+                output.accept(ModItems.POWER_SUPPLY);
             }).build());
     // TODO: PC case 블록 추가 후에 아이콘 변경, line: 31 아이템 등록부 수정
     public static final Supplier<CreativeModeTab> MISC_HARDWARE = CREATIVE_MODE_TAB.register("misc_hardware_tab", () -> CreativeModeTab.builder()

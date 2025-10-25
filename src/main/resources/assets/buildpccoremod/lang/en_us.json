@@ -6,6 +6,7 @@
   "item.buildpccoremod.ram": "RAM",
   "item.buildpccoremod.md2_ssd": "M.2 SSD",
   "item.buildpccoremod.mother_board": "Mother Board",
+  "item.buildpccoremod.power_supply": "Power Supply",
 
   "block.buildpccoremod.test_block": "Test Block",
   "block.buildpccoremod.pc_case": "PC Case",
