@@ -28,10 +28,10 @@ public class ModCreativeModeTabs {
             }).build());
     // TODO: PC case 블록 추가 후에 아이콘 변경, line: 31 아이템 등록부 수정
     public static final Supplier<CreativeModeTab> MISC_HARDWARE = CREATIVE_MODE_TAB.register("misc_hardware_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModBlocks.TEST_BLOCK))
+            .icon(() -> new ItemStack(ModBlocks.PC_CASE))
             .title(Component.translatable("creativetab.buildpccoremod.misc_hardware"))
             .displayItems((ItemDisplayParameters, output) -> {
-                output.accept(ModBlocks.TEST_BLOCK);
+                output.accept(ModBlocks.PC_CASE);
             }).build());
 
     public static void register(IEventBus eventBus) {
