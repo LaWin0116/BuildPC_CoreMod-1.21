@@ -27,12 +27,28 @@ public class ModCreativeModeTabs {
                 output.accept(ModItems.MOTHER_BOARD);
                 output.accept(ModItems.POWER_SUPPLY);
             }).build());
-    // TODO: PC case 블록 추가 후에 아이콘 변경, line: 31 아이템 등록부 수정
+
     public static final Supplier<CreativeModeTab> MISC_HARDWARE = CREATIVE_MODE_TAB.register("misc_hardware_tab", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(ModBlocks.PC_CASE))
+            .icon(() -> new ItemStack(ModBlocks.WHITE_PC_CASE))
             .title(Component.translatable("creativetab.buildpccoremod.misc_hardware"))
             .displayItems((ItemDisplayParameters, output) -> {
-                output.accept(ModBlocks.PC_CASE);
+                // output.accept(ModBlocks.PC_CASE);
+                output.accept(ModBlocks.WHITE_PC_CASE);
+                output.accept(ModBlocks.LIGHT_GRAY_PC_CASE);
+                output.accept(ModBlocks.GRAY_PC_CASE);
+                output.accept(ModBlocks.BLACK_PC_CASE);
+                output.accept(ModBlocks.BROWN_PC_CASE);
+                output.accept(ModBlocks.RED_PC_CASE);
+                output.accept(ModBlocks.ORANGE_PC_CASE);
+                output.accept(ModBlocks.YELLOW_PC_CASE);
+                output.accept(ModBlocks.LIME_PC_CASE);
+                output.accept(ModBlocks.GREEN_PC_CASE);
+                output.accept(ModBlocks.CYAN_PC_CASE);
+                output.accept(ModBlocks.LIGHT_BLUE_PC_CASE);
+                output.accept(ModBlocks.BLUE_PC_CASE);
+                output.accept(ModBlocks.PURPLE_PC_CASE);
+                output.accept(ModBlocks.MAGENTA_PC_CASE);
+                output.accept(ModBlocks.PINK_PC_CASE);
             }).build());
 
     public static void register(IEventBus eventBus) {

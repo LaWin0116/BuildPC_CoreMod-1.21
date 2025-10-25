@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:light_gray_concrete"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CGG",
+    "CCC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "buildpccoremod:light_gray_pc_case"
+  }
+}

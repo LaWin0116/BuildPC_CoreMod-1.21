@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "C": {
-      "item": "minecraft:light_gray_concrete"
+      "item": "minecraft:white_concrete"
     },
     "G": {
       "item": "minecraft:glass"
@@ -16,6 +16,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "buildpccoremod:pc_case"
+    "id": "buildpccoremod:white_pc_case"
   }
 }

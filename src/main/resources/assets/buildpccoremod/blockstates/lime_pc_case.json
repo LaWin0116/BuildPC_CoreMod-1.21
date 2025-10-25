@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "buildpccoremod:block/lime_pc_case"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "buildpccoremod:block/red_pc_case"
+    }
+  }
+}

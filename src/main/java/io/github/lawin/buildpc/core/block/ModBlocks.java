@@ -24,11 +24,26 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)));
 
-    public static final DeferredBlock<Block> PC_CASE = registerBlock("pc_case",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(1f)
-                    .noOcclusion()
-                    .sound(SoundType.METAL)));
+    /** pc case 블록의 공통 속성 */
+    private static final BlockBehaviour.Properties PC_CASES = BlockBehaviour.Properties.of().strength(1f).noOcclusion().sound(SoundType.METAL);
+
+    // public static final DeferredBlock<Block> PC_CASE = registerBlock("pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> WHITE_PC_CASE = registerBlock("white_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> LIGHT_GRAY_PC_CASE = registerBlock("light_gray_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> GRAY_PC_CASE = registerBlock("gray_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> BLACK_PC_CASE = registerBlock("black_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> BROWN_PC_CASE = registerBlock("brown_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> RED_PC_CASE = registerBlock("red_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> ORANGE_PC_CASE = registerBlock("orange_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> YELLOW_PC_CASE = registerBlock("yellow_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> LIME_PC_CASE = registerBlock("lime_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> GREEN_PC_CASE = registerBlock("green_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> CYAN_PC_CASE = registerBlock("cyan_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> LIGHT_BLUE_PC_CASE = registerBlock("light_blue_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> BLUE_PC_CASE = registerBlock("blue_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> PURPLE_PC_CASE = registerBlock("purple_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> MAGENTA_PC_CASE = registerBlock("Magenta_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> PINK_PC_CASE = registerBlock("pink_pc_case", () -> new Block(PC_CASES));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

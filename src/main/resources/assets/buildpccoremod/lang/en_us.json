@@ -2,14 +2,30 @@
   "_comment": "English",
 
   "item.buildpccoremod.test_item": "Test Item",
+  "block.buildpccoremod.test_block": "Test Block",
+
   "item.buildpccoremod.cpu": "CPU",
   "item.buildpccoremod.ram": "RAM",
   "item.buildpccoremod.md2_ssd": "M.2 SSD",
   "item.buildpccoremod.mother_board": "Mother Board",
   "item.buildpccoremod.power_supply": "Power Supply",
 
-  "block.buildpccoremod.test_block": "Test Block",
-  "block.buildpccoremod.pc_case": "PC Case",
+  "block.buildpccoremod.white_pc_case": "White PC Case",
+  "block.buildpccoremod.light_gray_pc_case": "Light Gray PC Case",
+  "block.buildpccoremod.gray_pc_case": "Gray PC Case",
+  "block.buildpccoremod.black_pc_case": "Black PC Case",
+  "block.buildpccoremod.brown_pc_case": "Brown PC Case",
+  "block.buildpccoremod.ren_pc_case": "Red PC Case",
+  "block.buildpccoremod.orange_pc_case": "Orange PC Case",
+  "block.buildpccoremod.yellow_pc_case": "Yellow PC Case",
+  "block.buildpccoremod.lime_pc_case": "Lime PC Case",
+  "block.buildpccoremod.green_pc_case": "Green PC Case",
+  "block.buildpccoremod.cyan_pc_case": "Cyan PC Case",
+  "block.buildpccoremod.light_blue_pc_case": "Light Blue PC Case",
+  "block.buildpccoremod.blue_pc_case": "Blue PC Case",
+  "block.buildpccoremod.purple_pc_case": "Purple PC Case",
+  "block.buildpccoremod.magenta_pc_case": "Magenta PC Case",
+  "block.buildpccoremod.pink_pc_case": "Pink PC Case",
 
   "creativetab.buildpccoremod.pc_chipsets": "PC Chipsets",
   "creativetab.buildpccoremod.misc_hardware": "Misc Hardware"
