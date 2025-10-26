@@ -42,7 +42,7 @@ public class ModBlocks {
     public static final DeferredBlock<Block> LIGHT_BLUE_PC_CASE = registerBlock("light_blue_pc_case", () -> new Block(PC_CASES));
     public static final DeferredBlock<Block> BLUE_PC_CASE = registerBlock("blue_pc_case", () -> new Block(PC_CASES));
     public static final DeferredBlock<Block> PURPLE_PC_CASE = registerBlock("purple_pc_case", () -> new Block(PC_CASES));
-    public static final DeferredBlock<Block> MAGENTA_PC_CASE = registerBlock("Magenta_pc_case", () -> new Block(PC_CASES));
+    public static final DeferredBlock<Block> MAGENTA_PC_CASE = registerBlock("magenta_pc_case", () -> new Block(PC_CASES));
     public static final DeferredBlock<Block> PINK_PC_CASE = registerBlock("pink_pc_case", () -> new Block(PC_CASES));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
