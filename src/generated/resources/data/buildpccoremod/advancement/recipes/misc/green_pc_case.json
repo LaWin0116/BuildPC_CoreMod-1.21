@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_green_concrete": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:green_concrete"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildpccoremod:green_pc_case"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_green_concrete",
+      "has_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildpccoremod:green_pc_case"
+    ]
+  }
+}

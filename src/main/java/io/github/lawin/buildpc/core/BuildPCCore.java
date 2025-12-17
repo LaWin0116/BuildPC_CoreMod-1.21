@@ -27,9 +27,9 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(BuildPCCore.MODID)
 public class BuildPCCore {
     // NOTE: MODID 상수는 존@나22 중요하니까 시@발 절대 건들지 말자;;
-    public static final String MODID = "buildpccoremod"; // 아 시발 백틱;; 작아서 존나 안보이노;;
+    public static final String MODID = "buildpccoremod";
     public static final Logger LOGGER = LogUtils.getLogger();
-    //
+
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public BuildPCCore(IEventBus modEventBus, ModContainer modContainer) {

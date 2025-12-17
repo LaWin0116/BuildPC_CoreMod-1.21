@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brown_concrete": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:brown_concrete"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "buildpccoremod:brown_pc_case"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brown_concrete",
+      "has_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "buildpccoremod:brown_pc_case"
+    ]
+  }
+}
