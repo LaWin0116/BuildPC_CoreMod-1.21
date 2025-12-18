@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cyan_concrete": {
+    "has_concrete": {
       "conditions": {
         "items": [
           {
@@ -31,7 +31,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cyan_concrete",
+      "has_concrete",
       "has_glass"
     ]
   ],

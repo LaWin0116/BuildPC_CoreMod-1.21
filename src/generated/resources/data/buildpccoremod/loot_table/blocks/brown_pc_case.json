@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "buildpccoremod:brown_pc_case"
+          "name": "minecraft:air"
         }
       ],
       "rolls": 1.0
