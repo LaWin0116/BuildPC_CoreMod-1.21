@@ -1,0 +1,7 @@
+{
+  "parent": "buildpccoremod:block/pc_case",
+  "textures": {
+    "0": "buildpccoremod:block/pink_pc_case",
+    "particle": "buildpccoremod:block/pink_pc_case"
+  }
+}
