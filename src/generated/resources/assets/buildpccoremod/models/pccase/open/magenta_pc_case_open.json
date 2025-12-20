@@ -1,0 +1,7 @@
+{
+  "parent": "buildpccoremod:block/pccase/open/pc_case_open",
+  "textures": {
+    "0": "buildpccoremod:block/pccase/open/magenta_pc_case_open",
+    "particle": "buildpccoremod:block/pccase/open/magenta_pc_case_open"
+  }
+}

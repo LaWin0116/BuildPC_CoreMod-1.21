@@ -1,6 +1,7 @@
 package io.github.lawin.buildpc.core;
 
 import io.github.lawin.buildpc.core.block.ModBlocks;
+import io.github.lawin.buildpc.core.block.entity.ModBlockEntities;
 import io.github.lawin.buildpc.core.item.ModCreativeModeTabs;
 import io.github.lawin.buildpc.core.item.ModItems;
 
@@ -45,6 +46,8 @@ public class BuildPCCore {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

@@ -1,0 +1,7 @@
+{
+  "parent": "buildpccoremod:block/pccase/close/pc_case_close",
+  "textures": {
+    "0": "buildpccoremod:block/pccase/close/light_blue_pc_case_close",
+    "particle": "buildpccoremod:block/pccase/close/light_blue_pc_case_close"
+  }
+}
