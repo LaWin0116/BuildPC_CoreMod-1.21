@@ -5,6 +5,10 @@ import io.github.lawin.buildpc.core.block.entity.ModBlockEntities;
 import io.github.lawin.buildpc.core.item.ModCreativeModeTabs;
 import io.github.lawin.buildpc.core.item.ModItems;
 
+import io.github.lawin.buildpc.core.screen.ModMenuTypes;
+import io.github.lawin.buildpc.core.screen.custom.PcCaseScreen;
+import net.minecraft.world.item.DyeColor;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,6 +53,8 @@ public class BuildPCCore {
 
         ModBlockEntities.register(modEventBus);
 
+        ModMenuTypes.register(modEventBus);
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -70,6 +76,12 @@ public class BuildPCCore {
             event.accept(ModItems.TEST_ITEM);
             event.accept(ModBlocks.TEST_BLOCK);
         }
+
+        if (event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS) {
+            for (DyeColor color : DyeColor.values()) {
+                event.accept(ModBlocks.PC_CASES.get(color));
+            }
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -84,6 +96,11 @@ public class BuildPCCore {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {
 
+        }
+
+        @SubscribeEvent
+        public static void registerScreen(RegisterMenuScreensEvent event) {
+            event.register(ModMenuTypes.PC_CASE_MENU.get(), PcCaseScreen::new);
         }
     }
 }

@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -29,22 +30,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ModBlocks.TEST_BLOCK.get());
 
-        dropSelf(ModBlocks.WHITE_PC_CASE.get());
-        dropSelf(ModBlocks.LIGHT_GRAY_PC_CASE.get());
-        dropSelf(ModBlocks.GRAY_PC_CASE.get());
-        dropSelf(ModBlocks.BLACK_PC_CASE.get());
-        dropSelf(ModBlocks.BROWN_PC_CASE.get());
-        dropSelf(ModBlocks.RED_PC_CASE.get());
-        dropSelf(ModBlocks.ORANGE_PC_CASE.get());
-        dropSelf(ModBlocks.YELLOW_PC_CASE.get());
-        dropSelf(ModBlocks.LIME_PC_CASE.get());
-        dropSelf(ModBlocks.GREEN_PC_CASE.get());
-        dropSelf(ModBlocks.CYAN_PC_CASE.get());
-        dropSelf(ModBlocks.LIGHT_BLUE_PC_CASE.get());
-        dropSelf(ModBlocks.BLUE_PC_CASE.get());
-        dropSelf(ModBlocks.PURPLE_PC_CASE.get());
-        dropSelf(ModBlocks.MAGENTA_PC_CASE.get());
-        dropSelf(ModBlocks.PINK_PC_CASE.get());
+        for (DyeColor color : DyeColor.values()) {
+            dropSelf(ModBlocks.PC_CASES.get(color).get());
+        }
+//        dropSelf(ModBlocks.WHITE_PC_CASE.get());
+//        dropSelf(ModBlocks.LIGHT_GRAY_PC_CASE.get());
+//        dropSelf(ModBlocks.GRAY_PC_CASE.get());
+//        dropSelf(ModBlocks.BLACK_PC_CASE.get());
+//        dropSelf(ModBlocks.BROWN_PC_CASE.get());
+//        dropSelf(ModBlocks.RED_PC_CASE.get());
+//        dropSelf(ModBlocks.ORANGE_PC_CASE.get());
+//        dropSelf(ModBlocks.YELLOW_PC_CASE.get());
+//        dropSelf(ModBlocks.LIME_PC_CASE.get());
+//        dropSelf(ModBlocks.GREEN_PC_CASE.get());
+//        dropSelf(ModBlocks.CYAN_PC_CASE.get());
+//        dropSelf(ModBlocks.LIGHT_BLUE_PC_CASE.get());
+//        dropSelf(ModBlocks.BLUE_PC_CASE.get());
+//        dropSelf(ModBlocks.PURPLE_PC_CASE.get());
+//        dropSelf(ModBlocks.MAGENTA_PC_CASE.get());
+//        dropSelf(ModBlocks.PINK_PC_CASE.get());
 
         // NOTE: 광석 블록에서 광물 나오게 하는거
         // add(ModBlocks.ORE_BLOCK.get(), block -> createOreDrop(ModBlocks.ORE_BLOCK.get(), ModItems.RAW_ORE.get()));

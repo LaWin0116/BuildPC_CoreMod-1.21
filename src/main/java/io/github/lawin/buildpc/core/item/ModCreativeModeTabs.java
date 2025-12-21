@@ -6,6 +6,7 @@ import io.github.lawin.buildpc.core.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 
 import net.neoforged.bus.api.IEventBus;
@@ -33,22 +34,25 @@ public class ModCreativeModeTabs {
             .title(Component.translatable("creativetab.buildpccoremod.misc_hardware"))
             .displayItems((ItemDisplayParameters, output) -> {
                 // output.accept(ModBlocks.PC_CASE);
-                output.accept(ModBlocks.WHITE_PC_CASE);
-                output.accept(ModBlocks.LIGHT_GRAY_PC_CASE);
-                output.accept(ModBlocks.GRAY_PC_CASE);
-                output.accept(ModBlocks.BLACK_PC_CASE);
-                output.accept(ModBlocks.BROWN_PC_CASE);
-                output.accept(ModBlocks.RED_PC_CASE);
-                output.accept(ModBlocks.ORANGE_PC_CASE);
-                output.accept(ModBlocks.YELLOW_PC_CASE);
-                output.accept(ModBlocks.LIME_PC_CASE);
-                output.accept(ModBlocks.GREEN_PC_CASE);
-                output.accept(ModBlocks.CYAN_PC_CASE);
-                output.accept(ModBlocks.LIGHT_BLUE_PC_CASE);
-                output.accept(ModBlocks.BLUE_PC_CASE);
-                output.accept(ModBlocks.PURPLE_PC_CASE);
-                output.accept(ModBlocks.MAGENTA_PC_CASE);
-                output.accept(ModBlocks.PINK_PC_CASE);
+                for (DyeColor color : DyeColor.values()) {
+                    output.accept(ModBlocks.PC_CASES.get(color));
+                }
+//                output.accept(ModBlocks.WHITE_PC_CASE);
+//                output.accept(ModBlocks.LIGHT_GRAY_PC_CASE);
+//                output.accept(ModBlocks.GRAY_PC_CASE);
+//                output.accept(ModBlocks.BLACK_PC_CASE);
+//                output.accept(ModBlocks.BROWN_PC_CASE);
+//                output.accept(ModBlocks.RED_PC_CASE);
+//                output.accept(ModBlocks.ORANGE_PC_CASE);
+//                output.accept(ModBlocks.YELLOW_PC_CASE);
+//                output.accept(ModBlocks.LIME_PC_CASE);
+//                output.accept(ModBlocks.GREEN_PC_CASE);
+//                output.accept(ModBlocks.CYAN_PC_CASE);
+//                output.accept(ModBlocks.LIGHT_BLUE_PC_CASE);
+//                output.accept(ModBlocks.BLUE_PC_CASE);
+//                output.accept(ModBlocks.PURPLE_PC_CASE);
+//                output.accept(ModBlocks.MAGENTA_PC_CASE);
+//                output.accept(ModBlocks.PINK_PC_CASE);
             }).build());
 
     public static void register(IEventBus eventBus) {
