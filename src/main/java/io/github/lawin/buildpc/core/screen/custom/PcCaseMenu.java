@@ -3,6 +3,7 @@ package io.github.lawin.buildpc.core.screen.custom;
 import io.github.lawin.buildpc.core.block.ModBlocks;
 import io.github.lawin.buildpc.core.block.custom.PcCaseBlock;
 import io.github.lawin.buildpc.core.block.entity.PcCaseBlockEntity;
+import io.github.lawin.buildpc.core.pc.PcSlotType;
 import io.github.lawin.buildpc.core.screen.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -44,10 +45,43 @@ public class PcCaseMenu extends AbstractContainerMenu {
                 {23, 60}, {23, 23}, {61, 23}, {99, 23}, {137, 23}
         };
 
+        final PcSlotType[] SLOT_TYPES = {
+                PcSlotType.MOTHERBOARD,
+                PcSlotType.CPU,
+                PcSlotType.COOLER,
+                PcSlotType.RAM,
+                PcSlotType.RAM,
+                PcSlotType.RAM,
+                PcSlotType.RAM,
+                PcSlotType.MD2_SSD,
+                PcSlotType.MD2_SSD,
+                PcSlotType.GPU,
+                PcSlotType.GPU,
+                PcSlotType.POWER_SUPPLY,
+                PcSlotType.FAN,
+                PcSlotType.FAN,
+                PcSlotType.FAN,
+                PcSlotType.FAN,
+                PcSlotType.FAN
+        };
+
         for (int i = 0; i < slotPositions.length; i++) {
             int x = slotPositions[i][0];
             int y = slotPositions[i][1];
-            this.addSlot(new SlotItemHandler(this.blockEntity.inventory, i, x, y));
+            PcSlotType type = SLOT_TYPES[i];
+
+            //this.addSlot(new SlotItemHandler(this.blockEntity.inventory, i, x, y));
+            this.addSlot(new SlotItemHandler(this.blockEntity.inventory, i, x, y) {
+                @Override
+                public boolean mayPlace(ItemStack stack) {
+                    return stack.is(type.tag);
+                }
+
+                @Override
+                public int getMaxStackSize() {
+                    return type.limit;
+                }
+            });
         }
 
     }

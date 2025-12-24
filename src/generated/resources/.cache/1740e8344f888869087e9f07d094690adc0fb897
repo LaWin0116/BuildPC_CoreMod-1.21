@@ -1,1 +1,6 @@
-// 1.21	2025-12-16T22:08:48.7840429	Tags for minecraft:item mod id buildpccoremod
+// 1.21	2025-12-22T22:30:23.9012865	Tags for minecraft:item mod id buildpccoremod
+c066ef65991c251aea6955bf1152a38d999f86df data/buildpccoremod/tags/item/cpu.json
+5b0cc36d174e748259166ad9e75e778f86836cff data/buildpccoremod/tags/item/md2_ssd.json
+8634e374f4891420bac34e5b9ea39652422ef0ea data/buildpccoremod/tags/item/mother_board.json
+ada8438b2e42315ec73d0973cfefedd5be72d2fd data/buildpccoremod/tags/item/power_supply.json
+eda8b874fe2827c719e6be8fbf579ff920f29143 data/buildpccoremod/tags/item/ram.json

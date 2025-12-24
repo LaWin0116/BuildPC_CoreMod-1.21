@@ -40,4 +40,9 @@ public class PcCaseScreen extends AbstractContainerScreen<PcCaseMenu> {
         guiGraphics.drawString(this.font, this.playerInventoryTitle, inventoryX, inventoryY, 0x404040, false);
     }
 
+    @Override
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
+        this.renderTooltip(guiGraphics, mouseX, mouseY);
+    }
 }

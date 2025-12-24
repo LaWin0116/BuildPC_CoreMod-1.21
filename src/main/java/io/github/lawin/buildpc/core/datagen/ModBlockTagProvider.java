@@ -1,6 +1,8 @@
 package io.github.lawin.buildpc.core.datagen;
 
 import io.github.lawin.buildpc.core.BuildPCCore;
+import io.github.lawin.buildpc.core.item.ModItems;
+import io.github.lawin.buildpc.core.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
@@ -16,6 +18,5 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
     }
 }
