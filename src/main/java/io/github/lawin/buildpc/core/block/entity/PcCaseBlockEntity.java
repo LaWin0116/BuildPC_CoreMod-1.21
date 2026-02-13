@@ -36,6 +36,7 @@ public class PcCaseBlockEntity extends BlockEntity implements MenuProvider {
             }
         }
     };
+	private float rotation;
 
 //    public PcCaseBlockEntity(BlockPos pos, BlockState blockState) {
 //        super(ModBlockEntities.WHITE_PCCASE_BE.get(), pos, blockState);
@@ -44,6 +45,13 @@ public class PcCaseBlockEntity extends BlockEntity implements MenuProvider {
         super(ModBlockEntities.PC_CASE.get(), pos, state);
     }
 
+	public float getRenderingRotation() {
+		rotation += 0.5f;
+		if(rotation >= 360) {
+			rotation = 0;
+		}
+		return rotation;
+	}
 
     public void clearContents() {
         inventory.setStackInSlot(0, ItemStack.EMPTY);

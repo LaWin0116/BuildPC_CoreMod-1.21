@@ -2,12 +2,14 @@ package io.github.lawin.buildpc.core;
 
 import io.github.lawin.buildpc.core.block.ModBlocks;
 import io.github.lawin.buildpc.core.block.entity.ModBlockEntities;
+import io.github.lawin.buildpc.core.block.entity.renderer.PcCaseBlockEntityRenderer;
 import io.github.lawin.buildpc.core.item.ModCreativeModeTabs;
 import io.github.lawin.buildpc.core.item.ModItems;
 
 import io.github.lawin.buildpc.core.screen.ModMenuTypes;
 import io.github.lawin.buildpc.core.screen.custom.PcCaseScreen;
 import net.minecraft.world.item.DyeColor;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import org.slf4j.Logger;
 
@@ -102,5 +104,10 @@ public class BuildPCCore {
         public static void registerScreen(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.PC_CASE_MENU.get(), PcCaseScreen::new);
         }
+
+		@SubscribeEvent
+		public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+			event.registerBlockEntityRenderer(ModBlockEntities.PC_CASE.get(), PcCaseBlockEntityRenderer::new);
+		}
     }
 }
