@@ -75,15 +75,15 @@ public class PcCaseBlockEntityRenderer implements BlockEntityRenderer<PcCaseBloc
 
 	    // PCIe (slots 9-10)
 //	    for (int i = 9; i <= 10; i++) {
-//		    ItemStack ram = pBlockEntity.inventory.getStackInSlot(i);
-//		    if (ram.isEmpty()) continue;
+//		    ItemStack PCIe = pBlockEntity.inventory.getStackInSlot(i);
+//		    if (PCIe.isEmpty()) continue;
 //
 //		    pPoseStack.pushPose();
 //		    pPoseStack.translate(.0D, .0D + (i - 9) * .0D, .0D);
 //		    pPoseStack.scale(.0F, .0F, .0F);
 //
 //		    itemRenderer.renderStatic(
-//				    ram,
+//				    PCIe,
 //				    ItemDisplayContext.FIXED,
 //				    pPackedLight,
 //				    pPackedOverlay,
@@ -142,30 +142,35 @@ public class PcCaseBlockEntityRenderer implements BlockEntityRenderer<PcCaseBloc
 	    }
 
 	    // M.2 (slots 7-8)
-//	    ItemStack Md2SSDI = pBlockEntity.inventory.getStackInSlot(7);
-//	    if (!Md2SSDI.isEmpty()) {
-//		    pPoseStack.pushPose();
-//		    pPoseStack.translate(0.0D, 0.25D, 0.0D);
-//		    pPoseStack.scale(0.4F, 0.4F, 0.4F);
-//
-//		    itemRenderer.renderStatic(
-//				    Md2SSDI,
-//				    ItemDisplayContext.FIXED,
-//				    pPackedLight,
-//				    pPackedOverlay,
-//				    pPoseStack,
-//				    pBufferSource,
-//				    level,
-//				    0
-//		    );
-//		    pPoseStack.popPose();
-//	    }
-//
+	    ItemStack Md2SSDI = pBlockEntity.inventory.getStackInSlot(7);
+	    if (!Md2SSDI.isEmpty()) {
+		    pPoseStack.pushPose();
+		    pPoseStack.translate(0.0D, 0.25D, 0.0D);
+		    pPoseStack.mulPose(Axis.YP.rotationDegrees(180));
+		    pPoseStack.mulPose(Axis.ZP.rotationDegrees(45));
+		    pPoseStack.scale(0.1F, 0.1F, 0.1F);
+
+		    itemRenderer.renderStatic(
+				    Md2SSDI,
+				    ItemDisplayContext.FIXED,
+				    pPackedLight,
+				    pPackedOverlay,
+				    pPoseStack,
+				    pBufferSource,
+				    level,
+				    0
+		    );
+		    pPoseStack.popPose();
+	    }
+
 //	    ItemStack Md2SSDII = pBlockEntity.inventory.getStackInSlot(8);
 //	    if (!Md2SSDII.isEmpty()) {
 //		    pPoseStack.pushPose();
 //		    pPoseStack.translate(0.0D, 0.25D, 0.0D);
-//		    pPoseStack.scale(0.4F, 0.4F, 0.4F);
+//	        pPoseStack.mulPose(Axis.XP.rotationDegrees(90));
+//	        pPoseStack.mulPose(Axis.YP.rotationDegrees(180));
+//	        pPoseStack.mulPose(Axis.ZP.rotationDegrees(45));
+//	        pPoseStack.scale(0.1F, 0.1F, 0.1F);
 //
 //		    itemRenderer.renderStatic(
 //				    Md2SSDII,
