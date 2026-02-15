@@ -2,6 +2,7 @@ package io.github.lawin.buildpc.core.block.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import io.github.lawin.buildpc.core.block.custom.PcCaseBlock;
 import io.github.lawin.buildpc.core.block.entity.PcCaseBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
@@ -10,6 +11,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -30,7 +32,22 @@ public class PcCaseBlockEntityRenderer implements BlockEntityRenderer<PcCaseBloc
 	    pPoseStack.pushPose();
 	    pPoseStack.translate(.5D, .5D, .5D);
 
-		// motherboard (slots 0)
+	    Direction dir = pBlockEntity
+			    .getBlockState()
+			    .getValue(PcCaseBlock.FACING);
+
+	    float rotY = switch (dir) {
+		    case NORTH -> 0F;
+		    case SOUTH -> 180F;
+		    case WEST  -> 90F;
+		    case EAST  -> -90F;
+		    default -> 0F;
+	    };
+
+	    pPoseStack.mulPose(Axis.YP.rotationDegrees(rotY));
+
+
+	    // motherboard (slots 0)
 	    ItemStack motherboard = pBlockEntity.inventory.getStackInSlot(0);
 	    if (!motherboard.isEmpty()) {
 
@@ -57,33 +74,16 @@ public class PcCaseBlockEntityRenderer implements BlockEntityRenderer<PcCaseBloc
 
 
 	    // PCIe (slots 9-10)
-//	    ItemStack PCIeI = pBlockEntity.inventory.getStackInSlot(9);
-//	    if (!PCIeI.isEmpty()) {
+//	    for (int i = 9; i <= 10; i++) {
+//		    ItemStack ram = pBlockEntity.inventory.getStackInSlot(i);
+//		    if (ram.isEmpty()) continue;
+//
 //		    pPoseStack.pushPose();
-//		    pPoseStack.translate(0.0D, 0.15D, -0.1D);
-//		    pPoseStack.scale(0.8F, 0.8F, 0.8F);
+//		    pPoseStack.translate(.0D, .0D + (i - 9) * .0D, .0D);
+//		    pPoseStack.scale(.0F, .0F, .0F);
 //
 //		    itemRenderer.renderStatic(
-//				    PCIeI,
-//				    ItemDisplayContext.FIXED,
-//				    pPackedLight,
-//				    pPackedOverlay,
-//				    pPoseStack,
-//				    pBufferSource,
-//				    level,
-//				    0
-//		    );
-//		    pPoseStack.popPose();
-//	    }
-//
-//	    ItemStack PCIeII = pBlockEntity.inventory.getStackInSlot(10);
-//	    if (!PCIeII.isEmpty()) {
-//		    pPoseStack.pushPose();
-//		    pPoseStack.translate(0.0D, 0.15D, -0.1D);
-//		    pPoseStack.scale(0.8F, 0.8F, 0.8F);
-//
-//		    itemRenderer.renderStatic(
-//				    PCIeII,
+//				    ram,
 //				    ItemDisplayContext.FIXED,
 //				    pPackedLight,
 //				    pPackedOverlay,
@@ -181,6 +181,24 @@ public class PcCaseBlockEntityRenderer implements BlockEntityRenderer<PcCaseBloc
 //	    }
 
 		// PSU (slots 11)
+	    ItemStack PSU = pBlockEntity.inventory.getStackInSlot(11);
+	    if (!PSU.isEmpty()) {
+		    pPoseStack.pushPose();
+		    pPoseStack.translate(-.19D, .1D, -.02D);
+		    pPoseStack.scale(1.1F, 1.1F, 1.1F);
+
+		    itemRenderer.renderStatic(
+				    PSU,
+				    ItemDisplayContext.FIXED,
+				    pPackedLight,
+				    pPackedOverlay,
+				    pPoseStack,
+				    pBufferSource,
+				    level,
+				    0
+		    );
+		    pPoseStack.popPose();
+	    }
 
 	    // fans (slots 12-16)
 
