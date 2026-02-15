@@ -117,26 +117,29 @@ public class PcCaseBlockEntityRenderer implements BlockEntityRenderer<PcCaseBloc
 	    }
 
 	    // RAM (slots 3-6)
-//	    for (int i = 3; i <= 6; i++) {
-//		    ItemStack ram = pBlockEntity.inventory.getStackInSlot(i);
-//		    if (ram.isEmpty()) continue;
-//
-//		    pPoseStack.pushPose();
-//		    pPoseStack.translate(-0.15D + (i - 3) * 0.1D, 0.25D, 0.0D);
-//		    pPoseStack.scale(0.35F, 0.35F, 0.35F);
-//
-//		    itemRenderer.renderStatic(
-//				    ram,
-//				    ItemDisplayContext.FIXED,
-//				    pPackedLight,
-//				    pPackedOverlay,
-//				    pPoseStack,
-//				    pBufferSource,
-//				    level,
-//				    0
-//		    );
-//		    pPoseStack.popPose();
-//	    }
+	    for (int i = 3; i <= 6; i++) {
+		    ItemStack ram = pBlockEntity.inventory.getStackInSlot(i);
+		    if (ram.isEmpty()) continue;
+
+		    pPoseStack.pushPose();
+		    pPoseStack.translate(.015D + (i - 3) * .021D, .255D, -.14D);
+		    pPoseStack.mulPose(Axis.XP.rotationDegrees(180));
+			pPoseStack.mulPose(Axis.YP.rotationDegrees(90));
+		    pPoseStack.mulPose(Axis.ZN.rotationDegrees(45));
+		    pPoseStack.scale(.2F, .2F, .2F);
+
+		    itemRenderer.renderStatic(
+				    ram,
+				    ItemDisplayContext.FIXED,
+				    pPackedLight,
+				    pPackedOverlay,
+				    pPoseStack,
+				    pBufferSource,
+				    level,
+				    0
+		    );
+		    pPoseStack.popPose();
+	    }
 
 	    // M.2 (slots 7-8)
 //	    ItemStack Md2SSDI = pBlockEntity.inventory.getStackInSlot(7);
